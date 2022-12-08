@@ -5,8 +5,8 @@ require('lspconfig').pylsp.setup{
         flake8 = { enabled = true },
         pyflakes = { enabled = true },
         pydocstyle = { enabled = false },
-        black = { enabled = false },
-        autopep8 = { enabled = false },
+        black = { enabled = true },
+        autopep8 = { enabled = true },
         pycodestyle = {
           ignore = { 'E251', 'W504' },
           maxLineLength = 200

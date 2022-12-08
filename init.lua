@@ -1,5 +1,6 @@
 require('vim-options')
 require('plugins')
+require('ale')
 
 require('lualine').setup{
     options = { theme  = 'seoul256' }
