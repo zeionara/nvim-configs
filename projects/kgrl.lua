@@ -1,5 +1,3 @@
-require('lspconfig').sourcekit.setup{}
-
 require('lspconfig').pylsp.setup{
   settings = {
     pylsp = {
