@@ -44,7 +44,7 @@ SWIFT_VERSION=5.7.3
 cd /tmp
 wget https://download.swift.org/swift-$VERSION-release/ubuntu2204/swift-$VERSION-RELEASE/swift-$VERSION-RELEASE-ubuntu22.04.tar.gz
 sudo mv swift-$VERSION-RELEASE-ubuntu22.04 /usr/share/swift-$VERSION
-echo export PATH=$PATH:/usr/share/swift-$VERSION/usr/bin/:/usr/share/swift-$VERSION/
+echo "export PATH=$PATH:/usr/share/swift-$VERSION/usr/bin/:/usr/share/swift-$VERSION/" >> ~/.bashrc
 ```
 
 Install required packages for the lsp server:
