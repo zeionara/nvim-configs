@@ -13,7 +13,7 @@ installer_path=${2:-/tmp/neovim.deb}
 
 echo downloading from $url to $installer_path...
 
-wget $url -o $installer_path || quit 'cannot download file'
+wget $url -O $installer_path || quit 'cannot download file'
 
 echo installing from $installer_path...
 
