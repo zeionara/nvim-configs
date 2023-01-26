@@ -9,7 +9,7 @@ quit () {
 }
 
 url=${1:-https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb}
-installer_path=${2:-neovim.deb}
+installer_path=${2:-/tmp/neovim.deb}
 
 echo downloading from $url to $installer_path...
 
