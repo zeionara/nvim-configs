@@ -8,16 +8,17 @@ quit () {
     exit 1
 }
 
-url=${1:-https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.debs}
+url=${1:-https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb}
+installer_path=${2:-neovim.deb}
 
-echo downloading from $url...
+echo downloading from $url to $installer_path...
 
-wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb || quit 'cannot download file'
+wget $url -o $installer_path || quit 'cannot download file'
 
-echo installing...
+echo installing from $installer_path...
 
-sudo apt install ./nvim-linux64.deb || quit 'cannot install nvim'
-rm ./nvim-linux64.deb || quit 'cannot remove downloaded file'
+sudo apt install $installer_path || quit "cannot install nvim from $installer_path"
+rm $installer_path || quit "cannot remove downloaded file which is $installer_path"
 
 echo fetching repo...
 
