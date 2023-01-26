@@ -17,7 +17,7 @@ wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb 
 echo installing...
 
 sudo apt install ./nvim-linux64.deb || quit 'cannot install nvim'
-remove ./nvim-linux64.deb || quit 'cannot remove downloaded file'
+rm ./nvim-linux64.deb || quit 'cannot remove downloaded file'
 
 echo fetching repo...
 
