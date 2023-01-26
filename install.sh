@@ -32,7 +32,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 
 echo 'installing plugins...'
 
-nvim --headless +PackerInstall +q || quit 'cannot install plugins'
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerInstall' || quit 'cannot install plugins'
+# nvim --headless +PackerInstall +q || quit 'cannot install plugins'
 
 echo 'configuring neovim...'
 
