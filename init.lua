@@ -10,8 +10,8 @@ require('nvim-projectconfig').setup()
 require("lsp_signature").setup()
 
 vim.cmd('colorscheme nordfox')
-vim.cmd('set indentkeys-=0#')
+-- vim.cmd('set indentkeys-=0#')
 
-indent = {
-    disable = {'yaml'}
-}
+-- indent = {
+--     disable = {'yaml'}
+-- }

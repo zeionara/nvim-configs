@@ -15,3 +15,5 @@ o.colorcolumn = '200'
 o.so = 999
 
 vim.cmd('set omnifunc=lsp#omnifunc')
+vim.cmd('set mouse=')
+vim.cmd('set nohlsearch')
