@@ -15,4 +15,9 @@ require('packer').startup(function(use)
     }
     use "airblade/vim-gitgutter"
     use "elixir-editors/vim-elixir"
+    -- use "lankavitharana/ballerina-vim"
+    use { 
+        "KRVPerera/ballerina-vim",
+        branch = "stable"
+    }
 end)
