@@ -1,5 +1,15 @@
 # Installation
 
+## Default installation
+
+To install using default options, execute the following command on a target machine:
+
+```sh
+curl -Ls https://bit.ly/setup-nvim | bash
+```
+
+## Step-by-step
+
 Install `neovim` from the latest `.deb` file in [the list](https://github.com/neovim/neovim/releases/tag/stable). For example, to install the `stable` release (`v0.8.2` at the time of writing) download the file and then install the package:
 
 ```sh
