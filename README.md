@@ -62,3 +62,11 @@ Install required packages for the lsp server:
 ```sh
 sudo apt-get install libncurses5
 ```
+
+# Tips
+
+To see where an option was last set:
+
+```sh
+:verbose set formatoptions
+```
