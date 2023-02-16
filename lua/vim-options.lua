@@ -18,5 +18,7 @@ vim.cmd('set omnifunc=lsp#omnifunc')
 vim.cmd('set mouse=')
 vim.cmd('set nohlsearch')
 
+vim.g.floaterm_width = 0.9
+
 -- vim.cmd('autocmd BufNewFile,BufReadPost * if &filetype == "python" | set indentkeys-=0# | endif')
 -- vim.cmd('autocmd BufNewFile,BufReadPost * if &filetype == "yaml" | set expandtab shiftwidth=2 indentkeys-=0# | endif')

@@ -6,5 +6,6 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map('n', '<C-f>', ':Files<CR>', { silent = true })
-map('n', '<C-n>', ':NERDTreeToggle<CR>', { silent = true })
+map('n', '<M-f>', ':Files<CR>', { silent = true })
+map('n', '<M-n>', ':NERDTreeToggle<CR>', { silent = true })
+vim.g.floaterm_keymap_toggle = '<M-t>'
