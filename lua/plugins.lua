@@ -20,4 +20,11 @@ require('packer').startup(function(use)
         "KRVPerera/ballerina-vim",
         branch = "stable"
     }
+    use 'junegunn/fzf.vim'
+    use {
+        'junegunn/fzf',
+        run = function() 
+            vim.fn['fzf#install']()
+        end
+    }
 end)
