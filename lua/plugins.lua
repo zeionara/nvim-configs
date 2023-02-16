@@ -27,4 +27,6 @@ require('packer').startup(function(use)
             vim.fn['fzf#install']()
         end
     }
+    use 'preservim/NERDTree'
+    use 'voldikss/vim-floaterm'
 end)

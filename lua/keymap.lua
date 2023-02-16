@@ -7,3 +7,4 @@ function map(mode, lhs, rhs, opts)
 end
 
 map('n', '<C-f>', ':Files<CR>', { silent = true })
+map('n', '<C-n>', ':NERDTreeToggle<CR>', { silent = true })
