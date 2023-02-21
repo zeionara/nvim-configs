@@ -1,4 +1,5 @@
 require('vim-options')
+require('keymap')
 require('plugins')
 require('ale')
 
