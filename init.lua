@@ -3,10 +3,10 @@ require('plugins')
 require('ale')
 
 require('lualine').setup{
-    options = { theme  = 'seoul256' }
+    options = { theme  = 'horizon' }
 }
 
 require('nvim-projectconfig').setup()
 require("lsp_signature").setup()
 
-vim.cmd('colorscheme nordfox')
+vim.cmd('colorscheme terafox')
