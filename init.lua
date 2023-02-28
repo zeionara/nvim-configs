@@ -3,6 +3,8 @@ require('keymap')
 require('plugins')
 require('ale')
 
+require('commands')
+
 require('lualine').setup{
     options = { theme  = 'horizon' }
 }
