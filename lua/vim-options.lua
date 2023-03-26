@@ -13,6 +13,7 @@ o.cursorline = true
 o.colorcolumn = '200'
 
 o.so = 999
+o.autochdir = true
 
 vim.cmd('set omnifunc=lsp#omnifunc')
 vim.cmd('set mouse=')
