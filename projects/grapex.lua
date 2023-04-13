@@ -1,6 +1,6 @@
 require('lspconfig').elixirls.setup({
   -- cmd = { '/usr/share/elixir-ls/language_server.sh' },
-  cmd = { '/home/zeio/elixir-ls/build/language_server.sh' },
+  cmd = { string.format('/home/%s/elixir-ls/build/language_server.sh', os.getenv('USER')) },
   -- cmd = { '/home/zeio/.local/share/vim-lsp-settings/servers/elixir-ls/language_server.sh' },
   -- capabilities = capabilities,
   -- settings = {
