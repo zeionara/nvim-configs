@@ -8,7 +8,8 @@ quit () {
     exit 1
 }
 
-url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb}
+version=${NVIM_VERSION:-v0.8.3}
+url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux64.deb}
 installer_path=${NVIM_FILE:-/tmp/neovim.deb}
 
 echo downloading from $url to $installer_path...

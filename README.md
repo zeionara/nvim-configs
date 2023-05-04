@@ -13,7 +13,7 @@ curl -Ls https://bit.ly/setup-nvim | bash
 Install `neovim` from the latest `.deb` file in [the list](https://github.com/neovim/neovim/releases/tag/stable). For example, to install the `stable` release (`v0.8.2` at the time of writing) download the file and then install the package:
 
 ```sh
-wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+wget https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
 sudo apt install ./nvim-linux64.deb
 ```
 
