@@ -1,0 +1,3 @@
+-- require('lspconfig').elixirls.setup({
+--     cmd = { '/usr/local/elixir-ls/build/language_server.sh' }
+-- })
