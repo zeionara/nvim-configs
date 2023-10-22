@@ -8,18 +8,23 @@ quit () {
     exit 1
 }
 
-version=${NVIM_VERSION:-v0.8.3}
-url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux64.deb}
-installer_path=${NVIM_FILE:-/tmp/neovim.deb}
-
-echo downloading from $url to $installer_path...
-
-wget $url -O $installer_path || quit 'cannot download file'
-
-echo installing from $installer_path...
-
-sudo apt install $installer_path || quit "cannot install nvim from $installer_path"
-rm $installer_path || quit "cannot remove downloaded file which is $installer_path"
+if test -z $(which pacman 2> /dev/null); then
+    version=${NVIM_VERSION:-v0.8.3}
+    url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux64.deb}
+    installer_path=${NVIM_FILE:-/tmp/neovim.deb}
+    
+    echo downloading from $url to $installer_path...
+    
+    wget $url -O $installer_path || quit 'cannot download file'
+    
+    echo installing from $installer_path...
+    
+    sudo apt install $installer_path || quit "cannot install nvim from $installer_path"
+    rm $installer_path || quit "cannot remove downloaded file which is $installer_path"
+else
+    sudo pacman -Syu
+    sudo pacman -S neovim
+fi
 
 echo fetching repo...
 
