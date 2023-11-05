@@ -8,22 +8,27 @@ quit () {
     exit 1
 }
 
-if test -z $(which pacman 2> /dev/null); then
-    version=${NVIM_VERSION:-v0.8.3}
-    url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux64.deb}
-    installer_path=${NVIM_FILE:-/tmp/neovim.deb}
-    
-    echo downloading from $url to $installer_path...
-    
-    wget $url -O $installer_path || quit 'cannot download file'
-    
-    echo installing from $installer_path...
-    
-    sudo apt install $installer_path || quit "cannot install nvim from $installer_path"
-    rm $installer_path || quit "cannot remove downloaded file which is $installer_path"
-else
-    sudo pacman -Syu
-    sudo pacman -S neovim
+if test -z "$(which nvim)"; then
+  if test "$(which apt 2> /dev/null)"; then
+      version=${NVIM_VERSION:-v0.8.3}
+      url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux64.deb}
+      installer_path=${NVIM_FILE:-/tmp/neovim.deb}
+
+      echo downloading from $url to $installer_path...
+
+      wget $url -O $installer_path || quit 'cannot download file'
+
+      echo installing from $installer_path...
+
+      sudo apt install $installer_path || quit "cannot install nvim from $installer_path"
+      rm $installer_path || quit "cannot remove downloaded file which is $installer_path"
+  elif test "$(which pacman 2> /dev/null)"; then
+      sudo pacman -Syu
+      sudo pacman -S neovim
+  else
+      sudo emerge --sync
+      sudo emerge --ask neovim
+  fi
 fi
 
 echo fetching repo...
