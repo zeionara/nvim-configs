@@ -37,16 +37,16 @@ if test -z $(which nvim 2> /dev/null); then
   fi
 fi
 
-echo fetching repo...
-
-git clone https://github.com/zeionara/nvim-configs.git $HOME/.config/nvim_ || quit 'cannot clone repo'
-
-echo installing package manager...
-
-mkdir $HOME/.config/nvim || quit 'cannot create config directory'
-ln $HOME/.config/nvim_/lua/plugins.lua $HOME/.config/nvim/init.lua || quit 'cannot create link to plugins list'
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim || quit 'cannot install package manager'
+# echo fetching repo...
+# 
+# git clone https://github.com/zeionara/nvim-configs.git $HOME/.config/nvim_ || quit 'cannot clone repo'
+# 
+# echo installing package manager...
+# 
+# mkdir $HOME/.config/nvim || quit 'cannot create config directory'
+# ln $HOME/.config/nvim_/lua/plugins.lua $HOME/.config/nvim/init.lua || quit 'cannot create link to plugins list'
+# 
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim || quit 'cannot install package manager'
 
 # echo 'installing plugins...'
 # 
