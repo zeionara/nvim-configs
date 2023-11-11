@@ -3,31 +3,37 @@
 # to install nvim using this script execute the following command on target maching:
 # curl https://raw.githubusercontent.com/zeionara/nvim-configs/master/install.sh -s | bash 
 
+set -e
+
 quit () {
     echo $1
     exit 1
 }
 
-if test -z "$(which nvim)"; then
-  if test "$(which apt 2> /dev/null)"; then
-      version=${NVIM_VERSION:-v0.8.3}
-      url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux64.deb}
-      installer_path=${NVIM_FILE:-/tmp/neovim.deb}
+if test -z $(which nvim 2> /dev/null); then
+  if test $(which apt 2> /dev/null); then
+    version=${NVIM_VERSION:-nightly}
+    url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux64.tar.gz}
+    installer_path=${NVIM_FILE:-/tmp/nvim.tar.gz}
+    installation_path=${NVIM_ROOT:-/usr/local}
 
-      echo downloading from $url to $installer_path...
+    echo downloading from $url to $installer_path...
 
-      wget $url -O $installer_path || quit 'cannot download file'
+    curl -sSL -o "$installer_path" "$url" || quit 'cannot download file'
 
-      echo installing from $installer_path...
+    echo installing from $installer_path...
 
-      sudo apt install $installer_path || quit "cannot install nvim from $installer_path"
-      rm $installer_path || quit "cannot remove downloaded file which is $installer_path"
-  elif test "$(which pacman 2> /dev/null)"; then
-      sudo pacman -Syu
-      sudo pacman -S neovim
+    sudo tar -C "$installation_path" -xzvf "$installer_path" || quit "cannot install nvim from $installer_path"
+    sudo ln "$installation_path/nvim-linux64/bin/nvim" /usr/bin || quit "cannot create link to the nvim binary at $installation_path/nvim-linux64/bin/nvim"
+
+    rm "$installer_path" || quit "cannot remove downloaded file $installer_path"
+  elif test $(which pacman 2> /dev/null); then
+    sudo pacman -Syu
+    sudo pacman -S neovim
+  elif test $(which emerge 2> /dev/null); then
+    sudo emerge --ask neovim
   else
-      sudo emerge --sync
-      sudo emerge --ask neovim
+    quit "Can't install neovim"
   fi
 fi
 
