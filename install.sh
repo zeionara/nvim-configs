@@ -46,20 +46,20 @@ echo installing package manager...
 mkdir $HOME/.config/nvim || quit 'cannot create config directory'
 ln $HOME/.config/nvim_/lua/plugins.lua $HOME/.config/nvim/init.lua || quit 'cannot create link to plugins list'
 
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim || quit 'cannot install package manager'
+git clone --depth 1 https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim || quit 'cannot install package manager'
 
-echo 'installing plugins...'
-
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerInstall' || quit 'cannot install plugins'
-
-echo 'configuring neovim...'
-
-rm -rf $HOME/.config/nvim || quit 'cannot remove temporary config'
-mv $HOME/.config/nvim_ $HOME/.config/nvim || quit 'cannot configure nvim'
-
-echo 'setting up ale...'
-
-mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start || quit 'cannot create folders for ale'
-git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale || quit 'cannot clone ale'
-
-echo 'finished installing nvim'
+# echo 'installing plugins...'
+# 
+# nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerInstall' || quit 'cannot install plugins'
+# 
+# echo 'configuring neovim...'
+# 
+# rm -rf $HOME/.config/nvim || quit 'cannot remove temporary config'
+# mv $HOME/.config/nvim_ $HOME/.config/nvim || quit 'cannot configure nvim'
+# 
+# echo 'setting up ale...'
+# 
+# mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start || quit 'cannot create folders for ale'
+# git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale || quit 'cannot clone ale'
+# 
+# echo 'finished installing nvim'
