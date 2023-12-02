@@ -12,4 +12,10 @@ require('lualine').setup{
 require('nvim-projectconfig').setup()
 require("lsp_signature").setup()
 
+require('nightfox').setup({
+    options = {
+        transparent = true
+    }
+})
+
 vim.cmd('colorscheme terafox')
