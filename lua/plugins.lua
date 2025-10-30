@@ -29,4 +29,6 @@ require('packer').startup(function(use)
     }
     use 'preservim/NERDTree'
     use 'voldikss/vim-floaterm'
+    use 'dense-analysis/ale'
+    use 'farmergreg/vim-lastplace'
 end)
