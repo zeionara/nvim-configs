@@ -1,3 +1,8 @@
+package.preload.ale = function()
+  local plugin_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/ale/lua/ale/init.lua'
+  return dofile(plugin_path)
+end
+
 require('vim-options')
 require('keymap')
 require('plugins')
