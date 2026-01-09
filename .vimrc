@@ -9,6 +9,8 @@ set cursorline
 set colorcolumn=200
 set so=999
 
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 call plug#begin()
 Plug 'prabirshrestha/vim-lsp'
 call plug#end()
