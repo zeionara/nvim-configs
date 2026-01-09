@@ -12,8 +12,8 @@ quit () {
 
 if test -z $(which nvim 2> /dev/null); then
   if test $(which apt 2> /dev/null); then
-    version=${NVIM_VERSION:-nightly}
-    url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux64.tar.gz}
+    version=${NVIM_VERSION:-v0.11.4}
+    url=${NVIM_URL:-https://github.com/neovim/neovim/releases/download/$version/nvim-linux-x86_64.tar.gz}
     installer_path=${NVIM_FILE:-/tmp/nvim.tar.gz}
     installation_path=${NVIM_ROOT:-/usr/local}
 
@@ -24,7 +24,7 @@ if test -z $(which nvim 2> /dev/null); then
     echo installing from $installer_path...
 
     sudo tar -C "$installation_path" -xzvf "$installer_path" || quit "cannot install nvim from $installer_path"
-    sudo ln -s "$installation_path/nvim-linux64/bin/nvim" /usr/bin || quit "cannot create link to the nvim binary at $installation_path/nvim-linux64/bin/nvim"
+    sudo ln -s "$installation_path/nvim-linux-x86_64/bin/nvim" /usr/bin || quit "cannot create link to the nvim binary at $installation_path/nvim-linux64/bin/nvim"
 
     rm "$installer_path" || quit "cannot remove downloaded file $installer_path"
   elif test $(which pacman 2> /dev/null); then
@@ -57,9 +57,9 @@ echo 'configuring neovim...'
 rm -rf $HOME/.config/nvim || quit 'cannot remove temporary config'
 mv $HOME/.config/nvim_ $HOME/.config/nvim || quit 'cannot configure nvim'
 
-echo 'setting up ale...'
+# echo 'setting up ale...'
 
-mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start || quit 'cannot create folders for ale'
-git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale || quit 'cannot clone ale'
+# mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start || quit 'cannot create folders for ale'
+# git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale || quit 'cannot clone ale'
 
 echo 'finished installing nvim'

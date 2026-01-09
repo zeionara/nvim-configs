@@ -1,3 +1,8 @@
+package.preload.ale = function()
+  local plugin_path = vim.fn.stdpath('data') .. '/site/pack/pckr/opt/ale/lua/ale/init.lua'
+  return dofile(plugin_path)
+end
+
 require('vim-options')
 require('keymap')
 require('plugins')
@@ -19,6 +24,10 @@ require('nightfox').setup({
 })
 
 vim.cmd('colorscheme terafox')
+
+vim.g.ale_linters = {
+  python = { "pylsp", "ruff", "flake8", "pylint" },
+}
 
 vim.diagnostic.config({
   float = true,

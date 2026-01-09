@@ -25,7 +25,9 @@ require('pckr').add{
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     };
     "ray-x/lsp_signature.nvim";
-    "airblade/vim-gitgutter"
+    "airblade/vim-gitgutter";
+    "farmergreg/vim-lastplace";
+    "dense-analysis/ale"
     -- "elixir-editors/vim-elixir"
     -- { 
     --     "KRVPerera/ballerina-vim",

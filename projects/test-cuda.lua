@@ -57,4 +57,4 @@ vim.lsp.config('pylsp', {
 
 -- pip install python-lsp-server[all] python-lsp-ruff
 
-vim.lsp.enable('pylsp')
+-- vim.lsp.enable('pylsp')
