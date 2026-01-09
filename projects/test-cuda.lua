@@ -5,18 +5,27 @@ vim.lsp.config('pylsp', {
         pylint = {
 	  enabled = true
 	},
-        flake8 = { enabled = true },
-        pyflakes = { enabled = true },
-        pydocstyle = { enabled = false },
-        black = { enabled = true },
-        autopep8 = { enabled = true },
+        flake8 = {
+	  enabled = true
+	},
+        pyflakes = {
+	  enabled = true
+	},
+        pydocstyle = {
+	  enabled = false
+	},
+        black = {
+	  enabled = true
+	},
+        autopep8 = {
+	  enabled = true
+	},
         pycodestyle = {
           maxLineLength = 200
         },
 	mccabe = {
 	    enabled = true
 	},
-	-- Enable jedi for better completion and diagnostics
 	jedi_completion = {
 	    enabled = true
 	},
@@ -32,12 +41,11 @@ vim.lsp.config('pylsp', {
 	jedi_symbols = {
 	    enabled = true
 	},
-	-- More detailed diagnostics
 	rope_completion = {
 	    enabled = true
 	},
         ruff = {
-          enabled = true,  -- Enable the plugin
+          enabled = true,
           -- formatEnabled = true,  -- Enable formatting using ruffs formatter
           -- extendSelect = { "I" },  -- Rules that are additionally used by ruff
           -- extendIgnore = { "C90" },  -- Rules that are additionally ignored by ruff
