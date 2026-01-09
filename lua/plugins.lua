@@ -1,32 +1,43 @@
+local function bootstrap_pckr()
+  local pckr_path = vim.fn.stdpath("data") .. "/pckr/pckr.nvim"
 
-local use = require('packer').use
+  if not (vim.uv or vim.loop).fs_stat(pckr_path) then
+    vim.fn.system({
+      'git',
+      'clone',
+      "--filter=blob:none",
+      'https://github.com/lewis6991/pckr.nvim',
+      pckr_path
+    })
+  end
 
-require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use "EdenEast/nightfox.nvim"
-    use "neovim/nvim-lspconfig"
-    use 'windwp/nvim-projectconfig'
-    use {
+  vim.opt.rtp:prepend(pckr_path)
+end
+
+bootstrap_pckr()
+
+require('pckr').add{
+    "EdenEast/nightfox.nvim";
+    "neovim/nvim-lspconfig";
+    "windwp/nvim-projectconfig";
+    {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-    use {
-      "ray-x/lsp_signature.nvim",
-    }
-    use "airblade/vim-gitgutter"
-    use "elixir-editors/vim-elixir"
-    -- use "lankavitharana/ballerina-vim"
-    use { 
-        "KRVPerera/ballerina-vim",
-        branch = "stable"
-    }
-    use 'junegunn/fzf.vim'
-    use {
-        'junegunn/fzf',
-        run = function() 
-            vim.fn['fzf#install']()
-        end
-    }
-    use 'preservim/NERDTree'
-    use 'voldikss/vim-floaterm'
-end)
+    };
+    "ray-x/lsp_signature.nvim";
+    "airblade/vim-gitgutter"
+    -- "elixir-editors/vim-elixir"
+    -- { 
+    --     "KRVPerera/ballerina-vim",
+    --     branch = "stable"
+    -- }
+    -- 'junegunn/fzf.vim'
+    -- {
+    --     'junegunn/fzf',
+    --     run = function() 
+    --         vim.fn['fzf#install']()
+    --     end
+    -- }
+    -- 'preservim/NERDTree'
+    -- 'voldikss/vim-floaterm'
+}
