@@ -6,7 +6,7 @@ end
 require('vim-options')
 require('keymap')
 require('plugins')
-require('ale')
+require('config.ale')
 
 require('commands')
 
