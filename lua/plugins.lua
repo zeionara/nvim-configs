@@ -17,6 +17,7 @@ end
 bootstrap_pckr()
 
 require('pckr').add{
+    "rose-pine/neovim",
     "EdenEast/nightfox.nvim";
     "neovim/nvim-lspconfig";
     "windwp/nvim-projectconfig";
