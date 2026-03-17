@@ -8,10 +8,12 @@ vim.lsp.config('pylsp', {
             '--disable=C0114',
             '--disable=C0115',
             '--disable=C0116',
+            '--max-line-length=200'
           }
         },
         flake8 = {
           enabled = true,
+          maxLineLength = 200,
           ignore = {
             'E251',
             'W504'
