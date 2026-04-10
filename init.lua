@@ -22,13 +22,9 @@ require('nightfox').setup({
     transparent = true
   }
 })
+require('./ale')
 
 vim.cmd('colorscheme terafox')
-
-vim.g.ale_linters = {
-  python = { "pylsp", "ruff", "flake8", "pylint" },
-}
-vim.g.ale_enabled = 0
 
 vim.diagnostic.config({
   float = true,
