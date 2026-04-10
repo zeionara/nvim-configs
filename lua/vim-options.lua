@@ -15,6 +15,8 @@ o.colorcolumn = '200'
 o.so = 999
 o.autochdir = true
 
+o.splitright = true
+
 vim.cmd('set omnifunc=lsp#omnifunc')
 vim.cmd('set mouse=')
 vim.cmd('set nohlsearch')
