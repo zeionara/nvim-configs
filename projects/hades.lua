@@ -7,7 +7,10 @@ vim.lsp.config('pylsp', {
             ignore = { 'E251' },
         },
         pyflakes = { enabled = true },
-        pydocstyle = { enabled = false },
+        pydocstyle = {
+            ignore = { 'D100', 'D103' },
+            enabled = true
+        },
         black = { enabled = true },
         autopep8 = { enabled = true },
         pycodestyle = {
