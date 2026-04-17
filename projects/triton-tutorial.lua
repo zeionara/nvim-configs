@@ -5,13 +5,9 @@ vim.lsp.config('pylsp', {
         flake8 = {
             enabled = true,
             ignore = { 'E251' },
-            maxLineLength = 200
         },
         pyflakes = { enabled = true },
-        pydocstyle = {
-            ignore = { 'D100', 'D103' },
-            enabled = true
-        },
+        pydocstyle = { enabled = false },
         black = { enabled = true },
         autopep8 = { enabled = true },
         pycodestyle = {
