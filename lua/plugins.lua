@@ -59,20 +59,7 @@ require('pckr').add{
       },
       config = function()
         require('avante').setup(
-          {
-            provider = "normax",
-            windows = {
-              width = 40,
-              ask = {
-                floating = true,
-                border = "rounded",
-                start_insert = false
-              }
-            },
-            providers = {
-              normax = require('normax-avante-provider')
-            }
-          }
+            require('avante-config')
         )
       end
     }
