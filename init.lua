@@ -1,3 +1,5 @@
+package.path = package.path .. ";/home/zeio/.oh-my-zsh/custom/bashrc/lua/?.lua"
+
 package.preload.ale = function()
   local plugin_path = vim.fn.stdpath('data') .. '/site/pack/pckr/opt/ale/lua/ale/init.lua'
   return dofile(plugin_path)

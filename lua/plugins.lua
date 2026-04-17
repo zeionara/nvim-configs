@@ -27,7 +27,7 @@ require('pckr').add{
     "ray-x/lsp_signature.nvim";
     "airblade/vim-gitgutter";
     "farmergreg/vim-lastplace";
-    "dense-analysis/ale"
+    "dense-analysis/ale";
     -- "elixir-editors/vim-elixir"
     -- { 
     --     "KRVPerera/ballerina-vim",
@@ -42,4 +42,38 @@ require('pckr').add{
     -- }
     -- 'preservim/NERDTree'
     -- 'voldikss/vim-floaterm'
+    {
+      'yetone/avante.nvim',
+      branch = 'main',
+      run = 'make',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'MunifTanjim/nui.nvim',
+        'MeanderingProgrammer/render-markdown.nvim',
+        'hrsh7th/nvim-cmp',
+        'nvim-tree/nvim-web-devicons', -- or use 'echasnovski/mini.icons'
+        'HakonHarnes/img-clip.nvim',
+        'zbirenbaum/copilot.lua',
+        'stevearc/dressing.nvim',-- for enhanced input UI
+        'folke/snacks.nvim', -- for modern input UI
+      },
+      config = function()
+        require('avante').setup(
+          {
+            provider = "normax",
+            windows = {
+              width = 40,
+              ask = {
+                floating = true,
+                border = "rounded",
+                start_insert = false
+              }
+            },
+            providers = {
+              normax = require('normax-avante-provider')
+            }
+          }
+        )
+      end
+    }
 }

@@ -18,6 +18,7 @@ vim.lsp.config('pylsp', {
           enabled = true
         },
         pydocstyle = {
+          ignore = { 'D100', 'D103' },
           enabled = false
         },
         black = {
