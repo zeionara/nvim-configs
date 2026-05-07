@@ -1,7 +1,7 @@
 -- https://github.com/yetone/avante.nvim/wiki/Custom-providers
 
 return {
-  provider = 'openrouter',
+  provider = 'normax',
   windows = {
     width = 40,
     ask = {

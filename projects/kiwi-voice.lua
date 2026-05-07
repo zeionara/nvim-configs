@@ -3,7 +3,7 @@ vim.lsp.config('pylsp', {
     pylsp = {
       plugins = {
         pylint = {
-          enabled = false,
+          enabled = true,
           args = {
             '--disable C0103,C0114,C0115,C0116',
             '--max-line-length 200'
@@ -18,8 +18,7 @@ vim.lsp.config('pylsp', {
           enabled = true
         },
         pydocstyle = {
-          ignore = { 'D100', 'D103' },
-          enabled = true
+          enabled = false
         },
         black = {
           enabled = true
@@ -60,10 +59,7 @@ vim.lsp.config('pylsp', {
           enabled = true,
           formatEnabled = true,
           lineLength = 200,
-          preview = true,
-          ignore = {
-            'I001'
-          }
+          preview = true
         }
       }
     }

@@ -42,25 +42,25 @@ require('pckr').add{
     -- }
     -- 'preservim/NERDTree'
     -- 'voldikss/vim-floaterm'
-    {
-      'yetone/avante.nvim',
-      branch = 'main',
-      run = 'make',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'MunifTanjim/nui.nvim',
-        'MeanderingProgrammer/render-markdown.nvim',
-        'hrsh7th/nvim-cmp',
-        'nvim-tree/nvim-web-devicons', -- or use 'echasnovski/mini.icons'
-        'HakonHarnes/img-clip.nvim',
-        'zbirenbaum/copilot.lua',
-        'stevearc/dressing.nvim',-- for enhanced input UI
-        'folke/snacks.nvim', -- for modern input UI
-      },
-      config = function()
-        require('avante').setup(
-            require('avante-config')
-        )
-      end
-    }
+    -- {
+    --   'yetone/avante.nvim',
+    --   branch = 'main',
+    --   run = 'make',
+    --   requires = {
+    --     'nvim-lua/plenary.nvim',
+    --     'MunifTanjim/nui.nvim',
+    --     -- 'MeanderingProgrammer/render-markdown.nvim',
+    --     'hrsh7th/nvim-cmp',
+    --     'nvim-tree/nvim-web-devicons', -- or use 'echasnovski/mini.icons'
+    --     'HakonHarnes/img-clip.nvim',
+    --     'zbirenbaum/copilot.lua',
+    --     'stevearc/dressing.nvim',-- for enhanced input UI
+    --     'folke/snacks.nvim', -- for modern input UI
+    --   },
+    --   config = function()
+    --     require('avante').setup(
+    --         require('avante-config')
+    --     )
+    --   end
+    -- }
 }
